@@ -19,6 +19,7 @@ const DATABASE_ID = process.env.NOTION_DATABASE_ID;
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 // Serve the form
 app.get('/', (req, res) => {
