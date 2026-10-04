@@ -23,7 +23,7 @@ app.use(express.static('public'));
 
 // Serve the form
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Handle form submission
@@ -97,6 +97,10 @@ app.post('/api/submit', async (req, res) => {
       details: error.message,
     });
   }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
 
 module.exports = app;
